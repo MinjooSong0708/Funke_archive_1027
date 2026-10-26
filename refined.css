@@ -1,0 +1,18 @@
+/* The supplied opening composition, with late and deliberately quiet glass. */
+:root{--steps-height:64px;--steps-progress:0}
+.hero-field{background:#fff}
+.hero-reference{position:absolute;max-width:none;display:block;transform-origin:100% 0;will-change:transform;image-rendering:auto}
+.hero-field{will-change:height}
+.intro-top{visibility:hidden}
+.intro-bottom{margin-top:auto;font-size:10px}
+.slogan-art{display:block;width:100%;height:100%}
+#movingSlogan{line-height:0}
+.mast,.mast.compact{background:rgba(255,255,255,var(--glass-opacity,0));backdrop-filter:none;-webkit-backdrop-filter:none;border-bottom-color:transparent;box-shadow:none}
+.mast.glass-on{backdrop-filter:blur(var(--glass-blur,0px));-webkit-backdrop-filter:blur(var(--glass-blur,0px));border-bottom-color:rgba(180,130,120,var(--glass-border,0))}
+.tabs{position:sticky;top:var(--header);z-index:85;border-top:0;border-bottom:1px solid #ddd;padding-top:calc(16px - 7px * var(--steps-progress));padding-bottom:calc(27px - 16px * var(--steps-progress));background:#fff}
+.tabs button{font-size:calc(22px - 7px * var(--steps-progress))}
+.tabs button small{font-size:calc(10px - 1px * var(--steps-progress))}
+.stage{top:calc(var(--header) + var(--steps-height) + 16px)}
+@media(max-width:1000px){.tabs button{font-size:calc(19px - 4px * var(--steps-progress))}}
+@media(max-width:650px){.tabs button{font-size:calc(14px - 2px * var(--steps-progress))}.tabs button small{font-size:8px;margin-bottom:calc(5px - 3px * var(--steps-progress))}.tabs{gap:6px}.intro-bottom .lab-index{display:none}.intro-bottom p{font-size:9px}.intro-bottom .text-button{font-size:9px}.stage{top:auto}}
+@media(prefers-reduced-transparency:reduce){.mast.glass-on{background:rgba(255,255,255,.92);backdrop-filter:none;-webkit-backdrop-filter:none}}

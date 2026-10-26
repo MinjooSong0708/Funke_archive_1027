@@ -1,0 +1,24 @@
+html:has(body.intro-active){overflow:hidden}
+body.intro-active{overflow:hidden}
+body.intro-active>.mast,body.intro-active main,body.intro-active footer{visibility:hidden}
+.film-intro{position:fixed;inset:0;z-index:1000;background:#fdfdfd;overflow:hidden;opacity:1;transition:opacity .85s cubic-bezier(.22,.61,.36,1)}
+.film-intro[hidden]{display:none}
+.film-intro video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .22s linear;pointer-events:none}
+.film-intro[data-state="playing"] video{opacity:1}
+.begin-intro{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:none;cursor:pointer;color:#111}
+.begin-intro:focus-visible{outline:2px solid #ff271f;outline-offset:-8px}
+.intro-logo-actor{position:absolute;left:0;top:0;display:block;transform-origin:0 0;will-change:transform,opacity}
+.intro-logo-actor img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.intro-logo-symbol{clip-path:inset(0 75.267% 0 0)}
+.intro-logo-word{clip-path:inset(0 0 0 24.733%)}
+.intro-prompt{position:absolute;left:0;right:0;bottom:12%;font:400 11px 'Neue Haas Grotesk',Arial,sans-serif;letter-spacing:.02em;color:#666;transition:opacity .2s}
+.skip-intro{position:absolute;right:28px;bottom:25px;z-index:2;border:0;background:none;padding:10px 0;font:400 11px 'Neue Haas Grotesk',Arial,sans-serif;color:#666;cursor:pointer}
+.skip-intro:hover{text-decoration:underline;text-underline-offset:4px}
+.intro-status{position:absolute;bottom:20%;left:18px;right:18px;text-align:center;font:12px Arial,sans-serif;color:#666;pointer-events:none}
+.film-intro[data-state="transitioning"] .intro-prompt,.film-intro[data-state="playing"] .intro-prompt{opacity:0}
+.film-intro[data-state="leaving"]{background:#fff;opacity:0;pointer-events:none}
+.film-intro[data-state="leaving"] video,.film-intro[data-state="leaving"] .begin-intro,.film-intro[data-state="leaving"] .skip-intro{opacity:0}
+body.intro-reveal #movingSlogan{animation:slogan-arrives .95s cubic-bezier(.22,.61,.36,1) both}
+@keyframes slogan-arrives{from{opacity:0;filter:blur(3px)}to{opacity:1;filter:blur(0)}}
+@media(max-width:650px){.skip-intro{right:18px;bottom:18px}.intro-prompt{bottom:17%}}
+@media(prefers-reduced-motion:reduce){.film-intro{transition-duration:.12s}body.intro-reveal #movingSlogan{animation:none}}

@@ -1,0 +1,46 @@
+/* Warm field to glass masthead, and a single bottom-docked preset strip. */
+:root{--preset-height:142px}
+html{scroll-padding-top:var(--header)}
+.lab{scroll-margin-top:0}
+.intro{display:flex;flex-direction:column;min-height:calc(100svh - var(--header) - 38px);height:calc(100svh - var(--header) - 38px);background:transparent;overflow:visible;padding-top:28px;padding-bottom:28px}
+.hero-field{position:fixed;z-index:90;left:0;top:0;width:100%;height:calc(100svh - 38px);overflow:hidden;pointer-events:none;transform-origin:50% 0;will-change:transform;background:linear-gradient(115deg,#fff5c9 0%,#ffb383 24%,#ff2632 53%,#ffe9b1 82%,#fffaf0 100%)}
+.heat-orbit{position:absolute;border-radius:50%;background:radial-gradient(ellipse at center,#fffbd5 0%,#fff4ad 15%,#ffbc83 29%,#ff1c2d 49%,#ff3141 60%,#ffe3c5 83%,#fff8df00 100%);filter:blur(6px)}
+.orbit-one{width:55%;height:155%;left:-20%;top:-25%;transform:rotate(24deg)}
+.orbit-two{width:46%;height:190%;left:20%;top:-53%;transform:rotate(24deg)}
+.orbit-three{width:43%;height:165%;left:55%;top:-31%;transform:rotate(24deg)}
+.orbit-four{width:35%;height:145%;right:-23%;top:4%;transform:rotate(24deg)}
+.glass-wash{position:absolute;inset:0;background:linear-gradient(125deg,#ffffff45 0%,#ffffff00 42%,#ffffff13 68%,#fff5c92e 100%);box-shadow:inset 0 -1px 0 #fff4}
+.intro-top,.intro-bottom{position:relative;z-index:91;color:#141414}
+.intro-top>span:last-child,.intro-bottom .lab-index{color:#28201ebf}
+.slogan-home{flex:1;height:auto;padding-top:clamp(75px,14svh,165px)}
+.hero-art{display:none}
+.mast{background:rgba(255,255,255,var(--glass-opacity,.26));backdrop-filter:blur(25px) saturate(1.2);-webkit-backdrop-filter:blur(25px) saturate(1.2);border-bottom:1px solid #ffffff7a;box-shadow:inset 0 1px 0 #ffffff6b,0 1px 14px #61260006}
+.mast .small-button{color:#a61a17}
+.mast.compact{border-bottom-color:#e1a98b66}
+.lab,.guide,footer{position:relative;background:#fff}
+.presets{position:relative;margin:30px 28px 58px;padding:0;min-height:130px}
+.preset-dock{position:relative;z-index:80;padding:13px 0 15px;background:#fff;box-sizing:border-box;border-top:1px solid #dadada}
+.preset-dock.is-pinned{position:fixed;left:0;right:0;bottom:0;padding:13px 28px 15px;background:#fffffff0;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-top:1px solid #dadada;box-shadow:0 -9px 30px #ffffffc9}
+.preset-dock .section-label{margin:0 0 10px;gap:20px}
+.preset-dock .section-label h2{font-size:15px;letter-spacing:-.035em}
+.preset-dock .section-label>span{font-size:10px}
+.preset-dock .preset-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:24px;padding:0;overflow:visible}
+.preset-dock .preset{display:grid;grid-template-columns:76px minmax(0,1fr);align-items:center;gap:11px;min-width:0;text-align:left}
+.preset-dock .preset img{width:76px;height:76px;aspect-ratio:1;object-fit:contain;image-rendering:auto;padding:0}
+.preset-dock .preset-caption,.preset-dock .preset.selected .preset-caption{display:flex;flex-direction:column;justify-content:center;align-items:start;gap:5px;font-size:10px;line-height:1.2;letter-spacing:-.015em;padding:0;margin:0;border:0;background:none}
+.preset-dock .preset-caption>span:first-child{font-size:8px}
+.preset-dock .preset.selected .preset-caption>span:first-child{color:var(--red)}
+.preset-dock .preset.selected .preset-caption>span:last-child{color:#111;text-decoration:underline;text-underline-offset:4px}
+.preset-docked .stage{height:min(clamp(390px,48vw,680px),calc(100svh - var(--header) - var(--preset-height) - 42px));min-height:280px}
+.sticker-view .sticker-scene{background:radial-gradient(ellipse at 28% 15%,#626366 0%,#45474b 37%,#303337 78%,#292c30 100%)}
+.sticker-scene:before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at var(--light-x,32%) var(--light-y,22%),#fff8dc0c 0%,#ffffff00 65%)}
+.sticker-view .stage-top,.sticker-view .stage-bottom{color:#d9dce0}
+.sticker-face.sticker-light{filter:none;transform:translateZ(.7px);pointer-events:none;backface-visibility:hidden}
+.sticker-face.sticker-foil{filter:drop-shadow(.3px .5px 0 #0003)}
+.sticker-view .sticker-card{width:auto;height:94%;aspect-ratio:1;max-width:95%}
+body .stage:not(.expanded):not(:fullscreen){height:min(clamp(360px,48vw,680px),var(--stage-room,calc(100svh - var(--header) - var(--preset-height) - 42px)));min-height:280px}
+@media(min-width:1500px){.presets{margin-left:44px;margin-right:44px}.preset-dock.is-pinned{padding-left:44px;padding-right:44px}.preset-dock .preset{grid-template-columns:86px 1fr}.preset-dock .preset img{width:86px;height:86px}}
+@media(max-width:1000px){.presets{margin-left:22px;margin-right:22px}.preset-dock.is-pinned{padding-left:22px;padding-right:22px}.preset-dock .preset-grid{gap:16px}.preset-dock .preset{grid-template-columns:65px 1fr;gap:8px}.preset-dock .preset img{width:65px;height:65px}.preset-dock .preset-caption{font-size:9px}}
+@media(max-width:760px){.preset-dock .preset-grid{gap:15px}.preset-dock .preset{display:flex;flex-direction:column;align-items:center;gap:5px}.preset-dock .preset img{width:64px;height:64px}.preset-dock .preset-caption,.preset-dock .preset.selected .preset-caption{flex-direction:row;gap:5px;align-items:baseline;font-size:8px}.preset-dock .preset-caption>span:first-child{font-size:7px}}
+@media(max-width:650px){.intro{padding-top:23px;padding-bottom:26px;min-height:calc(100svh - var(--header) - 34px);height:calc(100svh - var(--header) - 34px)}.slogan-home{padding-top:clamp(75px,15svh,130px)}.orbit-one{width:105%;left:-65%}.orbit-two{width:90%;left:4%;height:165%;top:-35%}.orbit-three{width:80%;left:71%;height:180%;top:-40%}.orbit-four{display:none}.presets{margin:26px 18px 45px;min-height:126px}.preset-dock{padding-top:12px;padding-bottom:12px}.preset-dock.is-pinned{padding:12px 18px}.preset-dock .section-label{margin-bottom:7px}.preset-dock .section-label h2{font-size:14px}.preset-dock .section-label>span{font-size:8px;max-width:none}.preset-dock .preset-grid{gap:5px}.preset-dock .preset img{width:min(100%,62px);height:62px}.preset-dock .preset-caption,.preset-dock .preset.selected .preset-caption{font-size:7px;gap:3px;white-space:nowrap}.preset-docked .stage{height:min(calc(100vw - 36px),calc(100svh - var(--header) - var(--preset-height) - 42px));min-height:280px}.sticker-card{width:96%}}
+@media(prefers-reduced-transparency:reduce){.mast{background:#fff4dcf0}.preset-dock.is-pinned{background:#fff}}
